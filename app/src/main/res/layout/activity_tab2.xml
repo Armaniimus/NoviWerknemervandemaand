@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:overScrollMode="ifContentScrolls"
+    tools:context=".Tab2Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/tab1"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickTab1"
+                    android:text="@string/tab1" />
+
+                <Button
+                    android:id="@+id/tab2"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#436998"
+                    android:focusable="true"
+                    android:text="@string/tab2" />
+
+                <Button
+                    android:id="@+id/tab3"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickTab3"
+                    android:text="@string/tab3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/rain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickRain"
+                    android:text="@string/rain" />
+
+                <Button
+                    android:id="@+id/star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickStar"
+                    android:text="@string/star" />
+
+                <Button
+                    android:id="@+id/sun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickSun"
+                    android:text="@string/sun" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/thumbup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickThumbup"
+                    android:text="@string/thumbup" />
+
+                <Button
+                    android:id="@+id/thunder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="clickThunder"
+                    android:text="@string/thunder" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/FrameMainImgView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/mainImgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/main_img"
+                    android:maxHeight="1000dp"
+                    android:minHeight="200dp"
+                    android:padding="0dp"
+                    app:srcCompat="@android:drawable/screen_background_dark" />
+
+                <ImageView
+                    android:id="@+id/rainView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/rain_img"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/rain" />
+
+                <ImageView
+                    android:id="@+id/starView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="top|end"
+                    android:contentDescription="@string/star_img"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/star" />
+
+                <ImageView
+                    android:id="@+id/sunView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="top|end"
+                    android:contentDescription="@string/sun_img"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/sun" />
+
+                <ImageView
+                    android:id="@+id/thumbupView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center|start|end"
+                    android:contentDescription="@string/todo"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/thumb_up" />
+
+                <ImageView
+                    android:id="@+id/thunderView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/thunder_img"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/thunder" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <SurfaceView
+                        android:id="@+id/surfaceView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/medewerkerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:freezesText="false" />
+
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/StoreImg"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:isScrollContainer="false"
+                android:onClick="clickStoreImg"
+                android:text="@string/storeimg" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

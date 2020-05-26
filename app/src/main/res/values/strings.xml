@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Novi Werknemer van de maand</string>
+    <string name="title_activity_main2">Tab2Activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="tab1">tab1</string>
+    <string name="tab2">tab2</string>
+    <string name="tab3">tab3</string>
+    <string name="make_img">make Img</string>
+    <string name="load_img">load Img</string>
+    <string name="save_img">save Img</string>
+    <string name="main_foto">main foto</string>
+    <string name="thunder">Thunder</string>
+    <string name="rain">Rain</string>
+    <string name="thunder_img">thunder img</string>
+    <string name="sun_img">sun img</string>
+    <string name="star_img">star img</string>
+    <string name="rain_img">rain img</string>
+    <string name="todo">TODO</string>
+    <string name="sun">Sun</string>
+    <string name="thumbup">thumbup</string>
+    <string name="star">Star</string>
+    <string name="main_img">main img</string>
+    <string name="storeimg">StoreImg</string>
+    <string name="foto_bekijken">Foto Bekijken</string>
+    <string name="foto_verzenden">Foto Verzenden</string>
+</resources>
