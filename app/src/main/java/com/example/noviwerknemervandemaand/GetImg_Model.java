@@ -13,11 +13,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class ImgHandler {
+public class GetImg_Model {
     private Bitmap theImg = null;
 
     public void resolveMakeImg(ImageView img, Intent data) {
-        Log.v("ImgHandler", "Start resolveImg()");
+        Log.v("PermStorage_Model", "Start resolveImg()");
 
         Bundle extras = data.getExtras();
         this.theImg = (Bitmap) extras.get("data");
@@ -25,7 +25,7 @@ public class ImgHandler {
     }
 
     public void resolveLoadImg(ImageView imgView, InputStream imgInputStream) {
-        Log.v("ImgHandler", "Start loadImg()");
+        Log.v("PermStorage_Model", "Start loadImg()");
 
         //get img from image stream
         this.theImg = BitmapFactory.decodeStream(imgInputStream);
@@ -35,15 +35,15 @@ public class ImgHandler {
     }
 
     public boolean tempSaveImg(ContextWrapper cw) {
-        Log.v("ImgHandler", "Start saveImg()");
+        Log.v("PermStorage_Model", "Start saveImg()");
 
         if (this.theImg == null) {
-            Log.v("ImgHandler", "saveImg() no Image to save");
+            Log.v("PermStorage_Model", "saveImg() no Image to save");
             return false;
         }
 
         try {
-            Log.v("ImgHandler", "saveImg() start mainFunction");
+            Log.v("PermStorage_Model", "saveImg() start mainFunction");
             File directory = cw.getDir("tmpImgDir", Context.MODE_PRIVATE);
             File file = new File(directory, "img" + ".jpg");
 
@@ -74,40 +74,15 @@ public class ImgHandler {
         return false;
     }
 
-    public boolean permSaveImg(ContextWrapper cw) {
-        Log.v("ImgHandler", "Start permSaveImg()");
+    public void getTempImg(ContextWrapper cw, ImageView imgView) {
+        File directory = cw.getDir("tmpImgDir", Context.MODE_PRIVATE);
+        File file = new File(directory, "img" + ".jpg");
 
-        if (this.theImg == null) {
-            Log.v("ImgHandler", "permSaveImg() no Image to save");
-            return false;
+        if (file.exists()) {
+            Bitmap bm = BitmapFactory.decodeFile(file.toString());
+            Log.v( "Tab2Activity", "bm width: "+ bm.getWidth());
+            Log.v( "Tab2Activity", "bm height:"+ bm.getHeight());
+            imgView.setImageBitmap(bm);
         }
-
-        try {
-            Log.v("ImgHandler", "permSaveImg() start mainFunction");
-            File directory = cw.getDir("permImgDir", Context.MODE_PRIVATE);
-            File file = new File(directory, "img" + ".jpg");
-
-            if (!file.exists()) {
-                Log.d("path", file.toString());
-                FileOutputStream fos = null;
-                try {
-                    fos = new FileOutputStream(file);
-                    this.theImg.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-                    fos.flush();
-                    fos.close();
-                } catch (java.io.IOException e) {
-                    e.printStackTrace();
-                }
-                return true;
-            }
-        } catch (Exception Error2) {
-
-        }
-        return false;
-    }
-
-    public void Set_theImg( Bitmap img ) {
-        Log.v("ImgHandler", "Start Set_theImg()");
-        this.theImg = img;
     }
 }

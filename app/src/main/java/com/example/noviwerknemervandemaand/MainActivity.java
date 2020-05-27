@@ -4,9 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContextWrapper;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -24,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int LOAD_IMAGE = 2;
 
     private Logger logger = new Logger(1);
-    private ImgHandler ImgHandler = new ImgHandler();
+//    private PermStorage_Model PermStorage_Model = new PermStorage_Model();
+    private GetImg_Model GetImg_Model = new GetImg_Model();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == MAKE_IMAGE) {
             Log.w("MainActivity", "OnActivityResult start resolving makeImg()");
-            ImgHandler.resolveMakeImg(imgView, data);
+            GetImg_Model.resolveMakeImg(imgView, data);
             return;
 
         }  else if (requestCode == LOAD_IMAGE) {
             Log.w("MainActivity", "OnActivityResult start resolving loadImg()");
             try {
                 InputStream imgInputStream = getContentResolver().openInputStream(data.getData());
-                ImgHandler.resolveLoadImg(imgView, imgInputStream);
+                GetImg_Model.resolveLoadImg(imgView, imgInputStream);
             } catch(FileNotFoundException e) {
                 e.printStackTrace();
                 Toast.makeText(this, "unable to open image", Toast.LENGTH_LONG).show();
@@ -105,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity", "start saveImg()");
 
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        if ( ImgHandler.tempSaveImg(cw) ) {
+        if ( GetImg_Model.tempSaveImg(cw) ) {
             this.clickTab2();
         }
     }
