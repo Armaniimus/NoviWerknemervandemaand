@@ -61,21 +61,11 @@
                 android:id="@+id/fotoVerzenden"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="clickFotoVerzenden"
                 android:text="@string/foto_verzenden" />
 
-            <Button
-                android:id="@+id/fotoBekijken"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="clickFotoBekijken"
-                android:text="@string/foto_bekijken" />
         </LinearLayout>
 
         <ScrollView
