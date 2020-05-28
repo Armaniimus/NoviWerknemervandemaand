@@ -43,6 +43,7 @@ public class PermStorage_Model {
                 bm.compress(Bitmap.CompressFormat.JPEG, 100, fos);
                 fos.flush();
                 fos.close();
+                f.setReadable(true, false);
 
                 Log.d("FileSuccess", "File has been written succesfully");
             } catch (Exception e) {
