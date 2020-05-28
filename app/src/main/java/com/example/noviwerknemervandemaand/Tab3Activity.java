@@ -7,18 +7,11 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.LinearLayout;
-
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URLConnection;
 
 public class Tab3Activity extends AppCompatActivity {
     private Tab3GridView_Model Tab3GridView_Model = null;
