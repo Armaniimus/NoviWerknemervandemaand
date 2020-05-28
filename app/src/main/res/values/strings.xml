@@ -30,4 +30,5 @@
     <string name="storeimg">StoreImg</string>
     <string name="foto_bekijken">Foto Bekijken</string>
     <string name="foto_verzenden">Foto Verzenden</string>
+    <string name="send_to" >Deel deze foto</string>
 </resources>
