@@ -50,8 +50,8 @@ public class GetImg_Model {
             if (file.exists()) {
                 try {
                     file.delete();
-                } catch(Exception Error1) {
-
+                } catch(Exception e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -63,13 +63,13 @@ public class GetImg_Model {
                     this.theImg.compress(Bitmap.CompressFormat.JPEG, 100, fos);
                     fos.flush();
                     fos.close();
-                } catch (java.io.IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return true;
             }
-        } catch (Exception Error2) {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return false;
     }
