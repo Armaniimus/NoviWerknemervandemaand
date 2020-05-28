@@ -5,7 +5,6 @@ import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.widget.FrameLayout;
-
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -50,7 +49,6 @@ public class PermStorage_Model {
                 Log.e("FilewriteError", "" + e);
                 return false;
             }
-
 
         } catch (Exception E) {
             Log.e("BitmapError", "" + E);

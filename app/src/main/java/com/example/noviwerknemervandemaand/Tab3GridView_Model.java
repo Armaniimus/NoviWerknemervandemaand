@@ -41,7 +41,9 @@ public class Tab3GridView_Model {
         }
 
         //set styling
+        Tab3SelectNHandle_Model SelectNHandle_Model = new Tab3SelectNHandle_Model();
         int imgCounter = 0;
+
         for (int i = 0; i<rowTotal; i++) {
             rows[i].setStyling();
 
@@ -49,7 +51,8 @@ public class Tab3GridView_Model {
                 if (imgCounter < imgList.length) {
                     File file = new File(directory, imgList[imgCounter]);
                     Bitmap bm = BitmapFactory.decodeFile(file.toString());
-                    rows[i].setImg(ii, bm);
+
+                    rows[i].setImg(ii, bm, SelectNHandle_Model);
                 } else {
                     break;
                 }

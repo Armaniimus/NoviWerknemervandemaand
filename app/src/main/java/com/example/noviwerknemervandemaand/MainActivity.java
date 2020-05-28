@@ -32,17 +32,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickTab2(android.view.View view) {
         this.logger.switchActivity(2);
+        this.logger.toastShow(getApplicationContext(), "Switching to Tab2");
+
         Intent intent = new Intent(this, Tab2Activity.class);
         startActivity(intent);
     }
+
     public void clickTab2() {
         this.logger.switchActivity(2);
+        this.logger.toastShow(getApplicationContext(), "Switching to Tab2");
+
         Intent intent = new Intent(this, Tab2Activity.class);
         startActivity(intent);
     }
 
     public void clickTab3(android.view.View view) {
         this.logger.switchActivity(3);
+        this.logger.toastShow(getApplicationContext(), "Switching to Tab3");
+
         Intent intent = new Intent(this, Tab3Activity.class);
         startActivity(intent);
     }

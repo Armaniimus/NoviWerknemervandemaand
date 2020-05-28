@@ -33,7 +33,7 @@ public class RowFactory_Model {
         }
     }
 
-    public void setImg(short index, Bitmap bm) {
-        this.images[index].setImg(bm);
+    public void setImg(short index, Bitmap bm, Tab3SelectNHandle_Model SelectNHandle_Model) {
+        this.images[index].setActiveImg(bm, SelectNHandle_Model);
     }
 }
