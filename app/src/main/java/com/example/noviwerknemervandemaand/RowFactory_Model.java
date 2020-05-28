@@ -2,6 +2,7 @@ package com.example.noviwerknemervandemaand;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.view.ViewGroup;
 import android.widget.TableRow;
 
@@ -33,7 +34,7 @@ public class RowFactory_Model {
         }
     }
 
-    public void setImg(short index, Bitmap bm, Tab3SelectNHandle_Model SelectNHandle_Model) {
-        this.images[index].setActiveImg(bm, SelectNHandle_Model);
+    public void setImg(short index, String uri, Tab3SelectNHandle_Model SelectNHandle_Model) {
+        this.images[index].setActiveImg(uri, SelectNHandle_Model);
     }
 }

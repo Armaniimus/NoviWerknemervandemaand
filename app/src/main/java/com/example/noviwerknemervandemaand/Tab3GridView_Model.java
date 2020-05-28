@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.widget.LinearLayout;
 import java.io.File;
 
@@ -11,6 +12,7 @@ public class Tab3GridView_Model {
     private ContextWrapper cw;
     private LinearLayout Main_View;
     private android.content.Context Context;
+    private Tab3SelectNHandle_Model SelectNHandle_Model = null;
 
     private int rowTotal;
     private RowFactory_Model[] rows = null;
@@ -22,7 +24,9 @@ public class Tab3GridView_Model {
         this.Context = Context;
     }
 
-    public boolean run() {
+    public boolean run(Tab3SelectNHandle_Model obj) {
+        this.SelectNHandle_Model = obj;
+
         File directory = cw.getDir("permImgDir", Context.MODE_PRIVATE);
         String[] imgList = directory.list();
 
@@ -41,7 +45,6 @@ public class Tab3GridView_Model {
         }
 
         //set styling
-        Tab3SelectNHandle_Model SelectNHandle_Model = new Tab3SelectNHandle_Model();
         int imgCounter = 0;
 
         for (int i = 0; i<rowTotal; i++) {
@@ -50,9 +53,9 @@ public class Tab3GridView_Model {
             for(short ii = 0; ii<3; ii++) {
                 if (imgCounter < imgList.length) {
                     File file = new File(directory, imgList[imgCounter]);
-                    Bitmap bm = BitmapFactory.decodeFile(file.toString());
+                    String uri = file.toString();
 
-                    rows[i].setImg(ii, bm, SelectNHandle_Model);
+                    rows[i].setImg(ii, uri, SelectNHandle_Model);
                 } else {
                     break;
                 }

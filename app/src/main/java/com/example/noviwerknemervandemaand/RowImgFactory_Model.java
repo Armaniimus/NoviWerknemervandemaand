@@ -2,7 +2,8 @@ package com.example.noviwerknemervandemaand;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.view.View;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -31,12 +32,15 @@ public class RowImgFactory_Model {
         this.img.setLayoutParams(layoutParams);
     }
 
-    public void setActiveImg(Bitmap bm, Tab3SelectNHandle_Model SelectNHandle_Model) {
+    public void setActiveImg(String uri, Tab3SelectNHandle_Model SelectNHandle_Model) {
+        Bitmap bm = BitmapFactory.decodeFile(uri);
         this.img.setImageBitmap(bm);
         this.img.setPadding(10,10,10,10);
         this.img.setClickable(true);
         this.img.setFocusable(true);
         this.SelectNHandle_Model = SelectNHandle_Model;
         this.img.setOnClickListener(v -> this.SelectNHandle_Model.select(v));
+
+        this.img.setTag(uri);
     }
 }
